@@ -10,7 +10,7 @@ DOKKU_STORAGE_DIR="/var/lib/dokku/data/storage/"
 SHOKKU_DATA_DIR="$DOKKU_STORAGE_DIR/shokku"
 SHOKKU_APP_DATA_MOUNT_PATH="$SHOKKU_DATA_DIR:/data"
 SHOKKU_VERSION=${SHOKKU_VERSION:-"latest"}
-SHOKKU_IMAGE="registry.gitlab.com/texm/shokku:$SHOKKU_VERSION"
+SHOKKU_IMAGE="ghcr.io/texm/shokku:$SHOKKU_VERSION"
 
 SHOKKU_DOKKU_USER="shokkuadmin"
 DISTROLESS_NONROOT_UID="65532"
@@ -27,16 +27,19 @@ clean-shokku() {
     echo "==> removing existing dokku ssh key"
     dokku ssh-keys:remove $SHOKKU_DOKKU_USER;
   fi
+
+  echo "==> done"
 }
 
 create-shokku-app() {
   clean-shokku
-  echo "=> pulling version '$SHOKKU_VERSION'"
+
+  echo "=> pulling image (version: $SHOKKU_VERSION)"
   HOST_SSH_PORT=$(grep "Port " /etc/ssh/sshd_config | awk '{ print $2 }')
   docker pull "$SHOKKU_IMAGE" &> /dev/null
   SHOKKU_IMAGE_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$SHOKKU_IMAGE")
 
-  echo "=> creating & configuring app"
+  echo "=> creating & configuring dokku app"
   dokku apps:create shokku &> /dev/null
   dokku docker-options:add shokku deploy \
     "--add-host=host.docker.internal:host-gateway" &> /dev/null

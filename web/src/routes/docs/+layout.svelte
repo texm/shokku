@@ -3,15 +3,12 @@
 	import {page} from "$app/stores";
 	import Navbar from "$components/Navbar.svelte";
 	import ProgressButtons from "./ProgressButtons.svelte";
-	import {browser} from "$app/environment";
-	import {onMount} from "svelte";
 
 	const sidebarPages = [
 		{section: "Getting Started", ref: "/docs/intro", label: "Introduction"},
 		{ref: "/docs/installation", label: "Install"},
 		{ref: "/docs/setup", label: "Setup"},
 		{section: "Usage", ref: "/docs/apps", label: "Apps"},
-		// {ref: "/docs/apps/create", label: "Create App", level: 1},
 		{ref: "/docs/services", label: "Services"},
 	  {ref: "/docs/settings", label: "Settings"},
 		{section: "Maintenance", ref: "/docs/upgrading", label: "Upgrading"},
