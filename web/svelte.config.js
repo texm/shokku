@@ -13,7 +13,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			// base: dev ? '' : '/shokku',
+			base: dev ? '' : '/shokku',
 		},
 	},
 	preprocess: vitePreprocess(),
