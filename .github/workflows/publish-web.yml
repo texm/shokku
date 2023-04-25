@@ -19,9 +19,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./web
 
     steps:
       - uses: actions/checkout@v3
@@ -32,11 +29,11 @@ jobs:
           node-version: 16
           cache: 'npm'
           cache-dependency-path: 'web/package-lock.json'
-      - run: npm run build
+      - run: npm --prefix web run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./build
+          path: ./web/build
 
   deploy:
     runs-on: ubuntu-latest
