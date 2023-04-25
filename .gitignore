@@ -7,5 +7,5 @@ ui/dist
 .env
 .test_keyfile
 test.db
-shokku
+./shokku
 .idea
