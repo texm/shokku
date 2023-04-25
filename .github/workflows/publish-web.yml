@@ -25,6 +25,7 @@ jobs:
       - uses: actions/configure-pages@v1
         id: pages
       - uses: actions/setup-node@v3
+        working-directory: ./web
         with:
           node-version: 16
           cache: 'npm'
