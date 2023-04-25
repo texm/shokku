@@ -41,7 +41,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/shokku'
+          BASE_PATH: ''
         run: |
           npm run build
           touch build/.nojekyll
