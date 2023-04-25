@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="flex flex-row gap-4 justify-center">
-				<a href="{base}/docs">
+				<a href="{base}/docs/intro">
 					<button class="btn btn-primary text-primary-content">Get Started</button>
 				</a>
 
