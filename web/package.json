@@ -1,0 +1,25 @@
+{
+	"name": "web",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-static": "^1.0.6",
+		"@sveltejs/kit": "^1.0.0",
+		"@tailwindcss/typography": "^0.5.9",
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.21",
+		"svelte": "^3.54.0",
+		"tailwindcss": "^3.2.4",
+		"vite": "^4.0.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"daisyui": "^2.50.0"
+	}
+}
