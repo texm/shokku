@@ -1,5 +1,5 @@
 <script>
-	import "$src/app.css";
+	import "../app.css";
 </script>
 
 <svelte:head>

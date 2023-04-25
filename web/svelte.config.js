@@ -9,11 +9,10 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
-			precompress: false,
-			strict: true
+			precompress: false
 		}),
 		paths: {
-			base: dev ? '' : '/shokku',
+			base: dev ? '' : process.env.BASE_PATH,
 		},
 	},
 	preprocess: vitePreprocess(),

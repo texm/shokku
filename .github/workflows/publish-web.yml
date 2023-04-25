@@ -24,16 +24,27 @@ jobs:
         working-directory: ./web
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/configure-pages@v1
-        id: pages
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      # - uses: actions/configure-pages@v1
+      #   id: pages
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'npm'
           cache-dependency-path: 'web/package-lock.json'
-      - run: npm install
-      - run: npm run build
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: build
+        env:
+          BASE_PATH: '/shokku'
+        run: |
+          npm run build
+          touch build/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
