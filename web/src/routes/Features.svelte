@@ -2,11 +2,12 @@
 	const features = [
 	  {title: "Free and Open Source", ref: "", description: "description"},
 	  {title: "Github Integration", ref: "", description: "description"},
+	  {title: "Easy Setup", ref: "", description: "description"},
 	  {title: "Services Support", ref: "", description: "description"},
 	]
 </script>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-4">
 	{#each features as feature}
 		<div class="card bg-base-100 shadow-xl">
 			<div class="card-body">

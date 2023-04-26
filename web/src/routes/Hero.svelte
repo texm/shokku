@@ -24,9 +24,9 @@
 					<button class="btn btn-primary text-primary-content">Get Started</button>
 				</a>
 
-				<a href={demoUrl}>
+				<!--a href={demoUrl}>
 					<button class="btn btn-secondary text-secondary-content">Try the Demo</button>
-				</a>
+				</a-->
 			</div>
 		</div>
 	</div>
