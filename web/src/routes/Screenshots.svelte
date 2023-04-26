@@ -9,7 +9,7 @@
 	const prevIdx = i => (carouselImages - i)
 </script>
 
-<div class="mockup-window rounded-xl bg-base-200 shadow-secondary w-3/5 h-auto">
+<div class="mockup-window rounded-xl bg-base-200 w-auto h-fit shadow-lg shadow-secondary">
 	<img class="inline dark:hidden" alt="dashboard screenshot" src="/images/dashboard-dark.webp" />
 	<img class="hidden dark:inline" alt="dashboard screenshot" src="/images/dashboard-light.webp" />
 </div>

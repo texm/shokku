@@ -7,6 +7,9 @@ A friendly interface for [Dokku](https://github.com/dokku/dokku)
 ## Usage
 Read the [docs](https://shokku.app)
 
-## License
+## Support
+Shokku is provided 'as-is' - no support is available.
+Consider [Dokku Pro](https://pro.dokku.com).
 
+## License
 [AGPL License](https://github.com/texm/shokku/blob/master/LICENSE)
