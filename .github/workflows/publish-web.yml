@@ -45,6 +45,7 @@ jobs:
         run: |
           npm run build
           touch build/.nojekyll
+          echo "shokku.dev" > build/CNAME
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
