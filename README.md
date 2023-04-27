@@ -1,9 +1,9 @@
 # shokku
+![whaleboat logo](https://raw.githubusercontent.com/texm/shokku/main/web/static/images/whale-boat-sm.png)
+
 _(show-dokku)_
 
-![whaleboat logo](https://raw.githubusercontent.com/texm/shokku/main/web/static/images/whale-boat.png)
-
-A friendly interface for [Dokku](https://github.com/dokku/dokku)
+A friendly interface for [Dokku](https://github.com/dokku/dokku), the open-source Platform-as-a-Service.
 
 ![](https://raw.githubusercontent.com/texm/shokku/main/web/static/images/app-overview.webp)
 
