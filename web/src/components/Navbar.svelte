@@ -10,7 +10,7 @@
 	<div class="flex-1 gap-4 flex-row btn btn-ghost text-2xl">
 			<img class="w-10 h-10"
 					 src="{base}/images/whale-boat-sm.png" alt="whale in boat logo" />
-			<span class="normal-case">shokku</span>
+			<span class="normal-case">Shokku</span>
 	</div>
 	</a>
 	<div class="flex-none">
