@@ -1,8 +1,8 @@
 <p>
 	Shokku is an interface for <a href="https://dokku.com" class="link">Dokku</a> - an
 	open source, self-hostable <a href="https://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a>
-	(commercial options include <a href="heroku.com">Heroku</a>, <a href="fly.io">fly.io</a>,
-	or <a href="render.com">Render</a>)
+	(commercial options include <a href="https://heroku.com">Heroku</a>,
+	<a href="https://fly.io">fly.io</a>, or <a href="https://render.com">Render</a>)
 	<br />
 	It is recommended you are familiar with the underlying Dokku project
 	(<a href="https://dokku.com/docs" class="link">read the docs</a>).

@@ -45,6 +45,7 @@
 <h2>Linking a service</h2>
 <p>
 	Services need to be <i>linked</i> to an app. Once this is done, the connection
-	information will be available in the UI, and injected as an environment variable
-	to the app (eg <code>REDIS_URL</code>)
+	information will be available to the app as an environment variable
+	(eg <code>REDIS_URL</code>). These can be viewed in the Environment Variables
+	app page.
 </p>

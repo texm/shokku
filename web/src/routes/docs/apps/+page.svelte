@@ -28,8 +28,7 @@
 	then be automatically built and deployed. See the Dokku docs on this method
 	<a href={remoteRepoDocs}>here</a>.
 	<br />
-	If the repo is private, ensure you have configured access following the instructions
-	<a href={`${base}/docs/settings`}>here</a>.
+	If the repo is private, ensure you have configured access in the Settings page.
 </p>
 
 <h2>Docker Image</h2>
@@ -37,6 +36,6 @@
 	This option enables pulling a Docker image. See the Dokku docs for caveats
 	<a href={dockerImageDocs}>here</a>.
 	<br />
-	If the image is held in a private registry, ensure you have configured access by
-	following the instructions <a href={`${base}/docs/settings`}>here</a>.
+	If the image is held in a private registry, ensure you have configured access in the
+	Settings page.
 </p>
