@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - web/**
+      - ./bootstrap.sh
   workflow_dispatch:
 
 permissions:
