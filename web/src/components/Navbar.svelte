@@ -6,9 +6,13 @@
 
 <div class="navbar bg-neutral text-neutral-content flex items-center justify-between p-4 mx-auto">
 	<slot name="sidebar-toggle" />
-	<div class="flex-1">
-		<a href={base + "/"} class="btn btn-ghost normal-case text-xl">shokku</a>
+	<a href={base + "/"}>
+	<div class="flex-1 gap-4 flex-row btn btn-ghost text-2xl">
+			<img class="w-10 h-10"
+					 src="{base}/images/whale-boat-sm.png" alt="whale in boat logo" />
+			<span class="normal-case">shokku</span>
 	</div>
+	</a>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal px-3 gap-2">
 			<li>
