@@ -10,7 +10,7 @@
 		{ref: "/docs/setup", label: "Setup"},
 		{section: "Usage", ref: "/docs/apps", label: "Apps"},
 		{ref: "/docs/services", label: "Services"},
-	  {ref: "/docs/settings", label: "Settings"},
+	  // {ref: "/docs/settings", label: "Settings"},
 		{section: "Maintenance", ref: "/docs/upgrading", label: "Upgrading"},
 		{ref: "/docs/uninstall", label: "Uninstall"},
 	  {ref: "/docs/support", label: "Support"},

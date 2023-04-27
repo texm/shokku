@@ -47,7 +47,7 @@
 <h4>DigitalOcean</h4>
 <p>
 	For a cheap hosted server to try Shokku out, consider using DigitalOcean via this referral
-	link. You get $200 in credit for 60 days, and I get a $25 kick back :)
+	link. I get a kickback, and you get $200 in credit for 60 days - why not provision something beefy :)
 </p>
 <a target="_blank" href="https://www.digitalocean.com/?refcode=2fb615299eca&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
 	<img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" />

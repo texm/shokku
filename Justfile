@@ -5,7 +5,8 @@ web_npm := 'npm --prefix web'
 shokku_image := 'texm/shokku:latest'
 dokku_image := 'dokku/dokku:0.30.2'
 dokku_container_name := 'shokku-dokku-dev'
-dokku_data_mount_dir := '/tmp/var/lib/dokku'
+# for linux can this just be /var/lib/dokku ?
+dokku_data_mount_dir := '/tmp/colima/var/lib/dokku'
 dokku_ssh_host := '127.0.0.1'
 dokku_ssh_port := '3022'
 db_path := 'test.db'
@@ -143,8 +144,7 @@ _setup-dokku:
 	for plugin in redis postgres mongo mysql letsencrypt; do \
 		echo "installing $plugin"; \
 		docker exec {{dokku_container_name}} bash -c \
-			"dokku plugin:install https://github.com/dokku/dokku-$plugin.git" \
-			> /dev/null; \
+			"dokku plugin:install https://github.com/dokku/dokku-$plugin.git" > /dev/null; \
 	done
 
 	# to fix plugins: https://github.com/dokku/dokku/issues/5004

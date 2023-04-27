@@ -19,15 +19,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./web
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # - uses: actions/configure-pages@v1
-      #   id: pages
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -43,9 +38,10 @@ jobs:
         env:
           BASE_PATH: ''
         run: |
-          npm run build
-          touch build/.nojekyll
-          echo "shokku.dev" > build/CNAME
+          npm --prefix web run build
+          touch web/build/.nojekyll
+          cp bootstrap.sh web/build
+          echo "shokku.dev" > web/build/CNAME
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

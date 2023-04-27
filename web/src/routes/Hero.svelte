@@ -8,9 +8,9 @@
 <div class="hero h-full">
 	<div class="hero-content text-center flex-col py-10 px-0">
 		<div class="max-w-md mb-4">
-			<h1 class="text-5xl font-bold mb-2">A friendly interface for Dokku</h1>
+			<h1 class="text-5xl font-bold mb-4">A friendly interface for Dokku</h1>
 			<p class="text-xl px-4">
-				an open-source self-hostable web UI to help
+				an open-source web UI to help
 				<strong>configure</strong> and <strong>deploy</strong>
 				your apps and services with <a class="link" href="https://dokku.com/">Dokku</a>
 			</p>

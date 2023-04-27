@@ -1,17 +1,19 @@
 <script>
 	const ghAppUrl = "https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/about-apps"
 	const manifestUrl = "https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/creating-a-github-app-from-a-manifest";
-	// TODO
-	const codeManifestUrl = "https://github.com/texm/shokku"
+	const codeManifestUrl = "https://github.com/texm/shokku/blob/main/ui/src/routes/setup/github/%2Bpage.svelte#L10-L28"
 </script>
 
-<h2>Get Setup Key</h2>
+<h2>Setup Key</h2>
 <p>
 	Once installation is finished, a <i>setup key</i> will be output to
 	the console. Copy this, you will need it for the initial web setup.
+	<br />
+	This setup key is used to prevent any random internet stranger setting
+	up your deployment before you do.
 </p>
 
-<h2>Choose Setup Method</h2>
+<h2>Choose a Setup Method</h2>
 <h3>Github</h3>
 <p>
 	Setting up with Github creates a <a href={ghAppUrl}>Github App</a> to
