@@ -3,6 +3,7 @@
 	import {page} from "$app/stores";
 	import Navbar from "$components/Navbar.svelte";
 	import ProgressButtons from "./ProgressButtons.svelte";
+  import SocialShareMeta from "$components/SocialShareMeta.svelte";
 
 	const sidebarPages = [
 		{section: "Getting Started", ref: "/docs/intro", label: "Introduction"},
@@ -22,10 +23,13 @@
 		prevPage = (currentPage > 0) ? sidebarPages[currentPage - 1] : null;
 		nextPage = (currentPage < sidebarPages.length - 1) ? sidebarPages[currentPage + 1] : null;
 	}
+
+	$: pageTitle = `Shokku Docs - ${sidebarPages[currentPage].label}`;
 </script>
 
 <svelte:head>
-	<title>Shokku Docs - {sidebarPages[currentPage].label}</title>
+	<title>{pageTitle}</title>
+	<SocialShareMeta title={pageTitle} />
 </svelte:head>
 
 <div class="flex flex-col h-screen">

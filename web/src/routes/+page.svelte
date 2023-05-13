@@ -1,13 +1,15 @@
 <script>
+	import SocialShareMeta from "$components/SocialShareMeta.svelte";
 	import Navbar from "$components/Navbar.svelte";
-  import Hero from "./Hero.svelte";
-  import Features from "./Features.svelte";
-  import Screenshots from "./Screenshots.svelte";
-  import Footer from "./Footer.svelte";
+	import Hero from "./Hero.svelte";
+	import Features from "./Features.svelte";
+	import Screenshots from "./Screenshots.svelte";
+	import Footer from "./Footer.svelte";
 </script>
 
 <svelte:head>
 	<title>Shokku</title>
+	<SocialShareMeta title="Shokku" />
 </svelte:head>
 
 <div class="flex flex-col bg-base-300">
