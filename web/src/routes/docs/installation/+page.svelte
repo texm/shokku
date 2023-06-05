@@ -1,5 +1,5 @@
 <script>
-	const bootstrapLink = "https://shokku.dev/install.sh";
+	const bootstrapLink = "https://shokku.dev/bootstrap.sh";
 	const scriptInstallCommands = [
 	  `wget "${bootstrapLink}"`,
 		`export SHOKKU_LETSENCRYPT_EMAIL="foo@example.com"`,
