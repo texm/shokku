@@ -267,9 +267,7 @@ type GetAppConfigResponse struct {
 
 type SetAppConfigRequest struct {
 	Name string `json:"name" validate:"appName"`
-	// validate keys and values are alphanumeric
-	Config map[string]string `json:"config" validate:"dive,keys,alphanum,endkeys,alphanum"`
-	// Config map[string]string `json:"config"`
+	Config map[string]string `json:"config"`
 }
 
 type GetAppStorageRequest struct {
