@@ -8,7 +8,7 @@ A friendly interface for [Dokku](https://github.com/dokku/dokku), the open-sourc
 ![](https://raw.githubusercontent.com/texm/shokku/main/web/static/images/app-overview.webp)
 
 ## Usage
-Read the [docs](https://shokku.app)
+Read the [docs](https://shokku.dev/docs)
 
 ## Support
 Shokku is provided 'as-is' - no support is available.
