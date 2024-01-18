@@ -3,7 +3,7 @@
 	const scriptInstallCommands = [
 	  `wget "${bootstrapLink}"`,
 		`export SHOKKU_LETSENCRYPT_EMAIL="foo@example.com"`,
-	  `bash install.sh`,
+	  `bash bootstrap.sh`,
 	];
 </script>
 
