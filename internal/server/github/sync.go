@@ -4,14 +4,15 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/http"
+	"time"
+
 	gh "github.com/google/go-github/v48/github"
 	"github.com/rs/zerolog/log"
 	"gitlab.com/texm/shokku/internal/env"
 	"gitlab.com/texm/shokku/internal/models"
 	"gorm.io/gorm/clause"
-	"io"
-	"net/http"
-	"time"
 )
 
 type githubUser struct {
@@ -49,10 +50,26 @@ func SyncUsersToDB(e *env.Env) error {
 	for _, install := range installs {
 		var members []*gh.User
 		var err error
+		var response *gh.Response
+		var options *gh.ListMembersOptions
 		if install.GetAccount().GetType() == "Organization" {
+			var temp_members []*gh.User
+
 			insClient := client.GetInstallationClient(install.GetID())
 			org := install.GetAccount().GetLogin()
-			members, _, err = insClient.Organizations.ListMembers(ctx, org, nil)
+			temp_members, response, err = insClient.Organizations.ListMembers(ctx, org, options)
+			members = append(members, temp_members...)
+			
+			for response.NextPage != 0 {
+				options := &gh.ListMembersOptions{
+					ListOptions: gh.ListOptions{
+						Page: response.NextPage,
+					},
+				}
+				temp_members, response, err = insClient.Organizations.ListMembers(ctx, org, options)
+				members = append(members, temp_members...)
+			}
+
 		} else {
 			members = append(members, install.GetAccount())
 		}
