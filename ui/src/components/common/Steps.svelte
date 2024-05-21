@@ -50,7 +50,7 @@
   <div
     class="flex flex-col bg-base-200 p-4 rounded-lg shadow-xl flex-grow max-h-full"
   >
-    <div class="overflow-scroll" in:fly={{ y: 100, duration: 250 }}>
+    <div class="" in:fly={{ y: 100, duration: 250 }}>
       <svelte:component
         this={steps[currentStep].component}
         {props}

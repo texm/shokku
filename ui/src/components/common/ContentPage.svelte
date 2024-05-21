@@ -2,12 +2,12 @@
   <div class="hidden sm:flex rounded-lg flex-row w-full max-h-full">
     <slot name="sidebar" />
 
-    <div class="pl-3 h-full w-full flex flex-col overflow-x-scroll">
+    <div class="pl-3 h-full w-full flex flex-col ">
       <div class="w-full">
         <slot name="header" />
       </div>
 
-      <div class="overflow-scroll w-full h-full rounded-lg">
+      <div class=" w-full h-full rounded-lg">
         <slot name="content" />
       </div>
     </div>
@@ -18,8 +18,8 @@
     <slot name="header" />
     <slot name="sidebar" />
 
-    <div class="overflow-scroll h-full">
-      <div class="rounded-lg w-full h-full overflow-scroll pb-6">
+    <div class=" h-full">
+      <div class="rounded-lg w-full h-full  pb-6">
         <slot name="content" />
       </div>
     </div>

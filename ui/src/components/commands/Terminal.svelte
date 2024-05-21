@@ -47,7 +47,7 @@
   </div>
 
   <div
-    class="flex-grow max-w-80 h-80 overflow-x-scroll bg-base-content p-2"
+    class="flex-grow max-w-80 h-80  bg-base-content p-2"
     bind:this={scrollDiv}
   >
     <div class="whitespace-pre-wrap flex flex-col">

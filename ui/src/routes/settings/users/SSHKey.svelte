@@ -18,7 +18,7 @@
 </script>
 
 <div
-  class="flex gap-2 max-w-full overflow-scroll text-center items-center bg-base-100 p-4 rounded-lg"
+  class="flex gap-2 max-w-full  text-center items-center bg-base-100 p-4 rounded-lg"
 >
   <span class="text-lg">{name}</span>
   <div class="tooltip tooltip-left flex-grow" data-tip={tooltipText}>

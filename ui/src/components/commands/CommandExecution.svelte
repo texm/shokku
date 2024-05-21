@@ -23,7 +23,7 @@
   }
 </script>
 
-<div class="max-w-80 max-h-96 overflow-x-scroll" bind:this={msgContainer}>
+<div class="max-w-80 max-h-96 " bind:this={msgContainer}>
   {#each output as line, i}
     <pre data-prefix={i} class:text-warning={line["type"] === "stderr"}><code
         >{line["message"]}</code
