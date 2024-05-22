@@ -17,7 +17,7 @@
   const serviceStates = {};
 </script>
 
-<div class="flex flex-col md:flex-row gap-8 p-4 h-full overflow-y-scroll">
+<div class="flex flex-col md:flex-row gap-8 p-4 h-full overflow-y-auto">
   <div class="hidden md:inline flex-grow" />
   <div class="max-w-full md:max-w-lg md:flex-grow">
     <DashboardCardList

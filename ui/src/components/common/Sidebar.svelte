@@ -22,7 +22,7 @@
 </script>
 
 <div
-  class="menu rounded-box hidden sm:inline-block min-w-fit max-h-full bg-base-200 overflow-y-scroll shadow-lg h-fit"
+  class="menu rounded-box hidden sm:inline-block min-w-fit max-h-full bg-base-200 overflow-y-auto shadow-lg h-fit"
 >
   {#each pages as info, i}
     <li class="">
