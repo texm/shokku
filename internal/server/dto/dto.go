@@ -42,8 +42,8 @@ func NewRequestValidator() *requestValidator {
 	if err != nil {
 		log.Fatal().Err(err).Msg("failed to register validator")
 	}
-	v.RegisterAlias("appName", "appNameChars,min=4,max=32")
-	v.RegisterAlias("processName", "appNameChars,min=2,max=32")
+	v.RegisterAlias("appName", "appNameChars,min=1,max=32")
+	v.RegisterAlias("processName", "appNameChars,min=1,max=32")
 
 	return &requestValidator{validator: v}
 }
