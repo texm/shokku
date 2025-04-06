@@ -62,8 +62,13 @@ create-shokku-app() {
   echo "==> deploying"
   dokku config:unset shokku DOKKU_SKIP_DEPLOY &>/dev/null
 
-  echo "==> enabling letsencrypt"
-  dokku letsencrypt:enable shokku &>/dev/null
+  if [ -z "$SHOKKU_CERT" ]; then
+    echo "==> enabling letsencrypt"
+    dokku letsencrypt:enable shokku &>/dev/null
+  else
+    echo "==> adding certificate from SHOKKU_CERT"
+    dokku certs:add shokku < "$SHOKKU_CERT"
+  fi
 }
 
 main() {
@@ -77,9 +82,11 @@ main() {
     exit 1
   fi
 
-  if ! dokku plugin:installed letsencrypt; then
-    echo "Please setup letsencrypt using the instructions at https://dokku.com/docs/deployment/application-deployment/#setting-up-ssl" 1>&2
-    exit 1
+  if [ -z "$SHOKKU_CERT" ]; then
+    if ! dokku plugin:installed letsencrypt; then
+      echo "Please setup letsencrypt using the instructions at https://dokku.com/docs/deployment/application-deployment/#setting-up-ssl" 1>&2
+      exit 1
+    fi
   fi
 
   for plugin in redis postgres mongo mysql; do
