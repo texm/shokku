@@ -8,12 +8,13 @@
   export let loading;
   export let error;
 
+  const dokkuDir = "/var/lib/dokku/data/storage/";
   const storageTypes = {
-    "New Storage": { label: "Storage Name" },
-    // "Mount Existing Directory": {"label": "Existing Path to Mount"}
+    "Docker Volume": { label: "Volume Name" },
+    "Dokku Storage": { label: dokkuDir },
   };
 
-  let selectedType = "New Storage";
+  let selectedType = "Dokku Storage";
   let hostDir = "";
   let mountDir = "";
   let typeOptions = Object.keys(storageTypes);
@@ -21,7 +22,8 @@
   const dispatch = createEventDispatcher();
 
   const dispatchCreateStorage = () => {
-    const options = { selectedType, hostDir, mountDir };
+    const fullHostDir = selectedType === "Dokku Storage" ? `${dokkuDir}${hostDir}` : hostDir;
+    const options = { hostDir: fullHostDir, mountDir };
     dispatch("create", options);
   };
 </script>
