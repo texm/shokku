@@ -2,6 +2,7 @@ package apps
 
 import (
 	"fmt"
+	"regexp"
 	"github.com/labstack/echo/v4"
 	"github.com/rs/zerolog/log"
 	"github.com/texm/dokku-go"
@@ -56,15 +57,23 @@ func GetAppStorage(e *env.Env, c echo.Context) error {
 	})
 }
 
+// Check if the path is a valid Docker volume or a valid Dokku storage path
+var mountRegex = regexp.MustCompile(`^(/var/lib/dokku/data/storage/)?(\w{2,})$`)
+
 func MountAppStorage(e *env.Env, c echo.Context) error {
 	var req dto.AlterAppStorageRequest
 	if err := dto.BindRequest(c, &req); err != nil {
 		return err.ToHTTP()
 	}
 
-	if req.StorageType == "New Storage" {
-		// TODO: actually chown properly
-		err := e.Dokku.EnsureStorageDirectory(req.Name, dokku.StorageChownOptionHerokuish)
+	matches := mountRegex.FindStringSubmatch(req.HostDir)
+	if matches == nil {
+		return fmt.Errorf("invalid storage path: %s", req.HostDir)
+	}
+
+	// Ensure storage directory if it is a valid Dokku storage path
+	if matches[1] != "" {
+		err := e.Dokku.EnsureStorageDirectory(matches[2], dokku.StorageChownOptionHerokuish)
 		if err != nil {
 			return fmt.Errorf("ensuring app storage dir: %w", err)
 		}
@@ -85,6 +94,10 @@ func UnmountAppStorage(e *env.Env, c echo.Context) error {
 	var req dto.AlterAppStorageRequest
 	if err := dto.BindRequest(c, &req); err != nil {
 		return err.ToHTTP()
+	}
+
+	if !mountRegex.MatchString(req.HostDir) {
+		return fmt.Errorf("invalid storage path: %s", req.HostDir)
 	}
 
 	mount := dokku.StorageBindMount{

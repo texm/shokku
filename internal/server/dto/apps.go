@@ -288,9 +288,7 @@ type AlterAppStorageRequest struct {
 	Name       string `json:"name" validate:"appName"`
 	RestartApp bool   `json:"restart"`
 
-	// TODO: validation for these
-	StorageType  string `json:"selectedType"`
-	HostDir      string `json:"hostDir" validate:"gte=2,alphanum"`
+	HostDir      string `json:"hostDir"`
 	ContainerDir string `json:"mountDir"`
 }
 
